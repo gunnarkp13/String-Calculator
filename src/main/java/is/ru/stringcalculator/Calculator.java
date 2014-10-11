@@ -13,7 +13,8 @@ public class Calculator {
 		if(tmp.contains("//")){
 			String tmpdel = Character.toString(tmp.charAt(2));
 			tmp = tmp.replace(tmpdel , ",").trim();
-			tmp = tmp.replace("/",",").trim();	
+			tmp = tmp.replace("/",",").trim();
+			tmp = rmp.replaceAll("$,","")	
 		}
 		tmp = tmp.replace("\n",",").trim();
 		snumbers = tmp.split(",");
