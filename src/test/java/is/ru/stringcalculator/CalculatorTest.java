@@ -19,4 +19,10 @@ public class CalculatorTest {
 	public void testOneNumber(){
 		assertEquals(1, Calculator.add("1"));
 	}
+
+	//Prófa leggja saman 2 tölur skiptar með kommu
+	@Test
+	public void testTwoNumbers(){
+		assertEquals(3, Calculator.add("1,2"));
+	}
 }
