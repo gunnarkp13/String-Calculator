@@ -12,10 +12,10 @@ public class Calculator {
 		String tmp = value;
 		if(tmp.contains("//")){
 			String tmpdel = Character.toString(tmp.charAt(2));
-			tmp = tmp.replace(tmpdel , ",");
-			tmp = tmp.replace("/",",");	
+			tmp = tmp.replace(tmpdel , ",").trim();
+			tmp = tmp.replace("/",",").trim();	
 		}
-		tmp = tmp.replace("\n",",");
+		tmp = tmp.replace("\n",",").trim();
 		snumbers = tmp.split(",");
 		int sum = 0;
 		for(int i = 0; i < snumbers.length; i++){		
