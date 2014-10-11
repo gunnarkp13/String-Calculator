@@ -17,6 +17,6 @@ public class CalculatorTest {
 	// Prófa eina tölu viljum fá 1 út.
 	@Test
 	public void testOneNumber(){
-		assertEquals(1, Calculator.add("1"))
+		assertEquals(1, Calculator.add("1"));
 	}
 }
