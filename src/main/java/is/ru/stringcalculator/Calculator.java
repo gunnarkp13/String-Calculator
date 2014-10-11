@@ -10,10 +10,18 @@ public class Calculator {
 	private static int splitnsum(String value){
 		String[] snumbers;
 		String tmp = value;
-		if(tmp.contains("//")){
+		if(tmp.startsWith("//")){
+			if(tmp.contains("[") && tmp.contains("]")){
+			String replaceme = tmp.substring(tmp.indexOf('[') + 1, tmp.indexOf('\n') - 1);
+			tmp = tmp.replace(replaceme, ",");
+			tmp = tmp.replace("[", ",");
+			tmp = tmp.replace("]", ",");
+			}
+			else{
 			String tmpdel = Character.toString(tmp.charAt(2));
-			tmp = tmp.replace(tmpdel , ",").trim();
-			tmp = tmp.replace("/",",").trim();
+			tmp = tmp.replace(tmpdel , ",");
+			}
+			tmp = tmp.replace("/",",");
 			tmp = tmp.replace(","," ").trim();
 			tmp = tmp.replace(" ",",").trim();
 		}

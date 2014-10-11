@@ -78,4 +78,12 @@ public class CalculatorTest {
 		assertEquals(2, Calculator.add("1001,2"));
 		assertEquals(2032, Calculator.add("999,1,32,1000,1001"));
 	}
+
+	//Prófa nota endalausan delimiter
+	@Test
+	public void testBracketDelimiter(){
+		assertEquals(6, Calculator.add("//[***]\n1***2***3"));
+		assertEquals(12,Calculator.add("//[%%%%]\n2%%%%5%%%%5"));
+		assertEquals(45,Calculator.add("//[#####]\n10#####15#####20"));
+	}
 }
