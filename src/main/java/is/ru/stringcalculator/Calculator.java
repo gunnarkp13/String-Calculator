@@ -7,14 +7,17 @@ public class Calculator {
 		else if(value.contains(",")){
 			return splitnsum(value);
 		}
-		else {return 1;}
+		else {return Integer.parseInt(value.trim());}
 	}
 
 	private static int splitnsum(String value){
 		String[] snumbers;
 		snumbers = value.split(",");
-		return Integer.parseInt(snumbers[0].trim()) +
-				 Integer.parseInt(snumbers[1].trim());		
+		int sum = 0;
+		for(int i = 0; i < snumbers.lenght; i++){		
+			sum += Integer.parseInt(snumbers[i].trim());
+		}
+		return sum;	
 	}
 	
 }

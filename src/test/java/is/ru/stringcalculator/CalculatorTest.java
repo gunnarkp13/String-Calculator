@@ -25,4 +25,13 @@ public class CalculatorTest {
 	public void testTwoNumbers(){
 		assertEquals(3, Calculator.add("1,2"));
 	}
+
+	//Prófa fleiri en 2 tölur, gerum fyrir 3,4 og 7 tölur
+	@Test
+	public void testManyNumbers(){
+		assertEquals(6, Calculator.add("1,2,3"))
+		assertEquals(10, Calculator.add("1,2,3,4"))
+		assertEquals(28, Calculator.add("1,2,3,4,5,6,7"))
+
+	}
 }
