@@ -4,7 +4,7 @@ public class Calculator {
 	
 	public static int add(String value){
 		if(value.equals("")){return 0;}
-		else if(value.contains(",")){
+		else if(value.contains("," || "\n")){
 			return splitnsum(value);
 		}
 		else {return Integer.parseInt(value.trim());}
@@ -12,7 +12,8 @@ public class Calculator {
 
 	private static int splitnsum(String value){
 		String[] snumbers;
-		snumbers = value.split(",");
+		String tmp = value.replace("\n",",");
+		snumbers = tmp.split(",");
 		int sum = 0;
 		for(int i = 0; i < snumbers.length; i++){		
 			sum += Integer.parseInt(snumbers[i].trim());

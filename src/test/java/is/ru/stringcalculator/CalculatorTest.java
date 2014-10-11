@@ -34,4 +34,13 @@ public class CalculatorTest {
 		assertEquals(28, Calculator.add("1,2,3,4,5,6,7"));
 
 	}
+
+	//Prófa \n í stað ,
+	@Test
+	public void testManyNumbers(){
+		assertEquals(6, Calculator.add("1\n2,3"));
+		assertEquals(10, Calculator.add("1,2\n3\n4"));
+		assertEquals(28, Calculator.add("1\n2,3,4\n5,6,7"));
+
+	}
 }
