@@ -70,4 +70,12 @@ public class CalculatorTest {
 		assertEquals("Negatives not allowed: -4,-5", e.getMessage());
 		}
 	}
+
+	//Prófa ignore á tölur stærri en 1000
+	@Test
+	public void testBiggerThan1k(){
+		assertEquals(7, Calculator.add("//;\n3;6000;1500;4"));
+		assertEquals(2, Calculator.add("1001,2"));
+		assertEquals(2032, Calculator.add("999,1,32,1000,1001"));
+	}
 }

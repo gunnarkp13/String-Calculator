@@ -23,7 +23,9 @@ public class Calculator {
 		int[] numbers = new int[snumbers.length];
 		for(int i = 0; i < snumbers.length; i++){
 			numbers[i] = Integer.parseInt(snumbers[i].trim());
-			sum += numbers[i];
+			if(numbers[i] < 1001){
+				sum += numbers[i];
+			}
 		}
 		String negnums = "";
 		for(int i = 0; i < numbers.length; i++){
