@@ -11,7 +11,7 @@ public class Calculator {
 		String[] snumbers;
 		String tmp = value;
 		if(tmp.contains("//")){
-			String tmpdel = Chracter.toString(tmp.charAt(2));
+			String tmpdel = Character.toString(tmp.charAt(2));
 			tmp.replace(tmpdel , ",");
 			tmp.replace("/","");	
 		}
