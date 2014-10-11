@@ -1,7 +1,7 @@
 package is.ru.stringcalculator;
 
 public class Calculator {
-	
+
 	public static int add(String value){
 		if(value.equals("")){ return 0; }
 		else{ return splitnsum(value); }
@@ -20,10 +20,24 @@ public class Calculator {
 		tmp = tmp.replace("\n",",").trim();
 		snumbers = tmp.split(",");
 		int sum = 0;
-		for(int i = 0; i < snumbers.length; i++){		
-			sum += Integer.parseInt(snumbers[i].trim());
+		int[] numbers = new int[snumbers.length];
+		for(int i = 0; i < snumbers.length; i++){
+			numbers[i] = Integer.parseInt(snumbers[i].trim());
+			sum += numbers[i];
 		}
-		return sum;	
+		String negnums = "";
+		for(int i = 0; i < numbers.length; i++){
+			if(numbers[i] < 0){negnums = negnums + Integer.toString(numbers[i]) + " ";}
+		}
+		if(negnums.length() != 0){
+			negnums = negnums.trim();
+			negnums = negnums.replace(" ", ",");
+			negnums = "Negatives not allowed: " + negnums;
+			throw new IllegalArgumentException(negnums);
+		}
+		else{
+			return sum;
+		}
 	}
 	
 }

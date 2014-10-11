@@ -52,4 +52,22 @@ public class CalculatorTest {
 		assertEquals(28, Calculator.add("//;\n1\n2;3;4\n5;6;7"));
 
 	}
+
+	//Prófa exception á mínustölur;
+	@Test
+	public void testNegativeNumbersException(){
+		try{ 
+			Calculator.add("-1,2");
+		}
+		catch(IllegalArgumentException e){
+		assertEquals("Negatives not allowed: -1", e.getMessage());
+		}
+
+		try{
+			Calculator.add("2,-4,3,-5");
+		}
+		catch(IllegalArgumentException e){
+		assertEquals("Negatives not allowed: -4,-5", e.getMessage());
+		}
+	}
 }
