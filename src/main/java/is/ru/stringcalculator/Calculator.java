@@ -14,8 +14,8 @@ public class Calculator {
 			String tmpdel = Character.toString(tmp.charAt(2));
 			tmp = tmp.replace(tmpdel , ",").trim();
 			tmp = tmp.replace("/",",").trim();
-			tmp = tmp.replace(/^[,\s]+|[,\s]+$/g, '');
-			tmp = tmp.replace(/\s*,\s*/g, ',');	
+			tmp = tmp.replace(","," ").trim();
+			tmp = tmp.replace(" ",",").trim();
 		}
 		tmp = tmp.replace("\n",",").trim();
 		snumbers = tmp.split(",");
