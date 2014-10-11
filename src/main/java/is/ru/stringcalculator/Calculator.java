@@ -14,7 +14,7 @@ public class Calculator {
 		String[] snumbers;
 		snumbers = value.split(",");
 		int sum = 0;
-		for(int i = 0; i < snumbers.lenght; i++){		
+		for(int i = 0; i < snumbers.length; i++){		
 			sum += Integer.parseInt(snumbers[i].trim());
 		}
 		return sum;	
