@@ -47,7 +47,7 @@ public class CalculatorTest {
 	//Prófa ; í stað ,
 	@Test
 	public void testDiffDelimiter(){
-		assertEquals(6, Calculator.add("\/\/;\n1\n2;3"));
+		assertEquals(6, Calculator.add("//;\n1\n2;3"));
 		assertEquals(10, Calculator.add("//;\n1;2\n3\n4"));
 		assertEquals(28, Calculator.add("//;\n1\n2;3;4\n5;6;7"));
 
