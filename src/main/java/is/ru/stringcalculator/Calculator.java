@@ -12,14 +12,22 @@ public class Calculator {
 		String tmp = value;
 		if(tmp.startsWith("//")){
 			if(tmp.contains("[") && tmp.contains("]")){
-			String replaceme = tmp.substring(tmp.indexOf('[') + 1, tmp.indexOf('\n') - 1);
-			tmp = tmp.replace(replaceme, ",");
-			tmp = tmp.replace("[", ",");
-			tmp = tmp.replace("]", ",");
+				int breakp = tmp.indexOf('\n');
+				int delindexopen = tmp.indexOf('[');
+				int delindexclose = tmp.indexOf(']');
+				while(delindexclose < breakp && delindexclose >= 0){
+					String replaceme = tmp.substring(delindexopen +1, delindexclose);
+					tmp = tmp.replace(replaceme, ",");
+					delindexopen = tmp.indexOf('[', delindexopen + 1);
+					delindexclose = tmp.indexOf(']', delindexclose + 1);
+				}
+				tmp = tmp.replace("[", ",");
+				tmp = tmp.replace("]", ",");
 			}
+
 			else{
-			String tmpdel = Character.toString(tmp.charAt(2));
-			tmp = tmp.replace(tmpdel , ",");
+				String tmpdel = Character.toString(tmp.charAt(2));
+				tmp = tmp.replace(tmpdel , ",");
 			}
 			tmp = tmp.replace("/",",");
 			tmp = tmp.replace(","," ").trim();

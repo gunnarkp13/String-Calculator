@@ -83,7 +83,16 @@ public class CalculatorTest {
 	@Test
 	public void testBracketDelimiter(){
 		assertEquals(6, Calculator.add("//[***]\n1***2***3"));
-		assertEquals(12,Calculator.add("//[%%%%]\n2%%%%5%%%%5"));
-		assertEquals(45,Calculator.add("//[#####]\n10#####15#####20"));
+		assertEquals(12, Calculator.add("//[%%%%]\n2%%%%5%%%%5"));
+		assertEquals(45, Calculator.add("//[#####]\n10#####15#####20"));
 	}
+
+	//Prófa fyrir marga delimiters
+	@Test
+	public void testMultiDelimiters(){
+		assertEquals(6, Calculator.add("//[*][%]\n1*2%3"));
+		assertEquals(12, Calculator.add("//[&][(][#]\n6&4#1#1"));
+		assertEquals(13, Calculator.add("//[=][}][{][$]\n2=4$5{2}"));
+	}
+
 }
