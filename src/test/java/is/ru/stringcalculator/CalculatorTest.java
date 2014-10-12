@@ -94,5 +94,12 @@ public class CalculatorTest {
 		assertEquals(12, Calculator.add("//[&][(][#]\n6&4#1#1"));
 		assertEquals(13, Calculator.add("//[=][}][{][$]\n2=4$5{2}"));
 	}
-
+	
+	//Prófa fyrir marga langa delimiters
+	@Test
+	public void testMultiLongDelimiters(){
+	assertEquals(6, Calculator.add("//[*][%%%]\n1*2%%%3"));
+	assertEquals(12, Calculator.add("//[#][##][&&]\n6&&4#1##1"));
+	assertEquals(13, Calculator.add("//[==][$$$$][{{{{{][}}}]\n2==4$$$$5{{{{{2}}}"));
+	}
 }
